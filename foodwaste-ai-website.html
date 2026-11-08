@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10251f">
+<title>FoodWaste AI — Turn surplus into smart decisions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10251f;--muted:#64766f;--green:#b9ed76;--lime:#d9f99d;--paper:#f5f7f1;--white:#fff;--line:#e4e9df;--orange:#ffad72;--red:#e87967;--shadow:0 22px 60px #122a1c12}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif}h1,h2,h3,h4{font-family:Manrope,sans-serif;letter-spacing:-.04em}a{text-decoration:none;color:inherit}.wrap{width:min(1160px,calc(100% - 44px));margin:auto}
+nav{height:82px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:11px;font:800 19px Manrope}.brandmark{width:38px;height:38px;border-radius:13px;background:var(--green);display:grid;place-items:center;font-size:21px}.navlinks{display:flex;gap:30px;color:#52645c;font-size:13px;font-weight:600}.navlinks a:hover{color:#1b7b4d}.navbtn,.btn{border:0;border-radius:999px;padding:13px 19px;background:var(--ink);color:#fff;font-weight:700;font-size:13px;cursor:pointer;display:inline-flex;align-items:center;gap:9px;transition:.2s}.navbtn:hover,.btn:hover{transform:translateY(-2px);background:#24563f}.btn.light{background:var(--green);color:var(--ink)}.btn.outline{background:transparent;color:var(--ink);border:1px solid #bfcbbf}.hero{padding:50px 0 74px;display:grid;grid-template-columns:1.03fr .97fr;gap:54px;align-items:center}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:99px;background:#e8f3df;color:#3d704c;font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.dot{width:7px;height:7px;border-radius:50%;background:#62a95d}.hero h1{font-size:clamp(42px,5.2vw,68px);line-height:1.04;margin:21px 0 20px;max-width:620px}.hero h1 span{color:#4c8a54}.hero p{font-size:16px;line-height:1.8;color:var(--muted);max-width:510px}.hero-actions{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}.trust{display:flex;align-items:center;gap:12px;margin-top:32px;color:#77857e;font-size:12px}.avatars{display:flex}.avatars i{width:27px;height:27px;border:2px solid var(--paper);border-radius:50%;margin-left:-7px;background:#d8e9c8;display:grid;place-items:center;font-style:normal;font-size:11px}.avatars i:first-child{margin-left:0}.hero-visual{position:relative;min-height:460px;border-radius:30px;overflow:hidden;background:#dcebd3}.hero-visual img{width:100%;height:460px;object-fit:cover;display:block;filter:saturate(.82)}.visual-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#142b1710 35%,#10251f99)}.float-card{position:absolute;background:#fff;border:1px solid #ffffffa6;border-radius:18px;padding:16px 18px;box-shadow:var(--shadow)}.float-card.top{top:22px;left:22px}.float-card.bottom{bottom:22px;right:22px;min-width:205px}.fc-label{font-size:10px;color:#78857e;text-transform:uppercase;letter-spacing:.1em;font-weight:800}.fc-big{font:800 26px Manrope;margin-top:5px}.fc-sub{font-size:11px;color:#6f7d75;margin-top:4px}.bar{height:6px;background:#edf1e9;border-radius:10px;margin-top:10px;overflow:hidden}.bar span{display:block;width:72%;height:100%;background:#7fbd62;border-radius:10px}
+.section{padding:82px 0}.section.white{background:#fff}.section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:34px}.kicker{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#66915c;font-weight:800}.section h2{font-size:clamp(30px,3.7vw,45px);margin:10px 0 0;line-height:1.13}.section-head p{max-width:410px;color:var(--muted);line-height:1.7;font-size:14px;margin:0}.problem-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.problem{padding:25px;border:1px solid var(--line);border-radius:20px;background:#fff}.problem .icon{width:43px;height:43px;border-radius:14px;background:#edf5e7;display:grid;place-items:center;font-size:21px}.problem h3{font-size:17px;margin:20px 0 8px}.problem p{font-size:13px;line-height:1.7;color:var(--muted);margin:0}.dashboard{background:#10251f;color:#fff;border-radius:27px;padding:28px;box-shadow:var(--shadow)}.dash-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:22px}.dash-top h3{font-size:22px;margin:0}.dash-top p{color:#a6b8ae;font-size:12px;margin:6px 0 0}.live{border:1px solid #3c5948;border-radius:99px;padding:8px 12px;color:#c8f4a2;font-size:11px;font-weight:700}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:#1b352a;border:1px solid #294637;border-radius:17px;padding:17px}.stat span{font-size:11px;color:#b0c0b5}.stat strong{display:block;font:800 25px Manrope;margin:9px 0 4px}.stat small{font-size:10px;color:#c4e9a0}.dash-bottom{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:14px}.chartbox,.insightbox{background:#1b352a;border:1px solid #294637;border-radius:17px;padding:19px}.chartbox h4,.insightbox h4{font-size:14px;margin:0 0 16px}.chart{height:130px;display:flex;align-items:end;gap:13px;border-bottom:1px solid #496252;padding:0 6px}.col{flex:1;background:linear-gradient(180deg,#c7f08d,#6ea66b);border-radius:7px 7px 0 0;position:relative;min-width:12px}.col:after{content:attr(data-day);position:absolute;top:139px;left:50%;transform:translateX(-50%);font-size:9px;color:#a8b9ae}.insightbox p{font-size:12px;line-height:1.7;color:#c1d0c5}.insightbox b{color:#d9f99d}.demo-grid{display:grid;grid-template-columns:.88fr 1.12fr;gap:24px;align-items:start}.panel{background:#fff;border:1px solid var(--line);border-radius:22px;padding:25px;box-shadow:0 10px 35px #14291a08}.panel h3{font-size:19px;margin:0 0 7px}.panel .sub{font-size:12px;color:var(--muted);line-height:1.6;margin:0 0 21px}.field{margin:14px 0}.field label{display:block;font-size:11px;font-weight:800;color:#506159;margin-bottom:7px}.field input,.field select{width:100%;border:1px solid #dce4d9;border-radius:11px;padding:12px 13px;font:13px "DM Sans";background:#fbfcf9;color:var(--ink);outline:none}.field input:focus,.field select:focus{border-color:#80b96d;box-shadow:0 0 0 3px #a6d58c30}.full{width:100%;justify-content:center;margin-top:5px}.result{display:none;margin-top:17px;padding:16px;border-radius:14px;background:#eff7e9;border:1px solid #d8e9cb}.result.show{display:block}.result strong{display:block;font:800 19px Manrope;margin-bottom:5px}.result p{font-size:12px;line-height:1.6;color:#52645a;margin:0}.inventory-list{display:grid;gap:10px}.item{display:flex;justify-content:space-between;align-items:center;padding:13px 14px;border:1px solid var(--line);border-radius:13px;gap:10px}.item-info strong{display:block;font-size:12px}.item-info small{color:var(--muted);font-size:10px}.badge{font-size:10px;font-weight:800;padding:6px 9px;border-radius:99px;white-space:nowrap}.badge.safe{background:#e6f4e3;color:#387343}.badge.warn{background:#fff0dc;color:#a86b27}.badge.danger{background:#ffebe6;color:#b64f40}.item-actions{display:flex;align-items:center;gap:8px}.remove{border:0;background:transparent;color:#9b6b63;cursor:pointer;font-size:17px}.empty{padding:28px;text-align:center;color:#829087;font-size:12px;border:1px dashed #d8e1d5;border-radius:14px}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.step{padding:21px;border-radius:18px;background:#f0f5eb;border:1px solid #e2eadb}.step-no{font:800 12px Manrope;color:#6a9a57}.step h3{font-size:15px;margin:13px 0 7px}.step p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}.cta{padding:55px;border-radius:26px;background:var(--green);display:flex;justify-content:space-between;align-items:center;gap:25px}.cta h2{font-size:clamp(27px,3.2vw,40px);max-width:580px;margin:0}.cta p{font-size:13px;color:#526b45;line-height:1.6;max-width:500px}.cta .btn{background:var(--ink);white-space:nowrap}footer{padding:35px 0;color:#748078;font-size:11px}.foot{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:25px}.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,20px);background:#10251f;color:white;padding:12px 17px;border-radius:99px;font-size:12px;opacity:0;transition:.25s;pointer-events:none;z-index:5}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:850px){.hero{grid-template-columns:1fr;gap:30px;padding-top:25px}.hero-visual,.hero-visual img{height:390px;min-height:390px}.stats{grid-template-columns:repeat(2,1fr)}.demo-grid{grid-template-columns:1fr}.steps{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}.dash-bottom{grid-template-columns:1fr}.section-head{display:block}.section-head p{margin-top:15px}}
+@media(max-width:560px){.wrap{width:min(100% - 30px,1160px)}nav{height:70px}.brand{font-size:16px}.navbtn{padding:10px 13px;font-size:11px}.hero{padding:22px 0 48px}.hero h1{font-size:43px}.hero p{font-size:14px}.hero-visual,.hero-visual img{height:320px;min-height:320px}.float-card{padding:12px}.float-card.bottom{right:12px;bottom:12px}.float-card.top{left:12px;top:12px}.problem-grid{grid-template-columns:1fr}.section{padding:58px 0}.dashboard{padding:18px}.stats{gap:8px}.stat{padding:12px}.stat strong{font-size:21px}.dash-top{align-items:flex-start}.steps{grid-template-columns:1fr 1fr}.step{padding:15px}.cta{padding:28px;display:block}.cta .btn{margin-top:12px}.foot{display:block;line-height:2.2}}
+</style>
+</head>
+<body>
+<header class="wrap">
+<nav>
+<a class="brand" href="#"><span class="brandmark">♧</span> foodwaste<span style="color:#6b9f57">.ai</span></a>
+<div class="navlinks"><a href="#solution">Solution</a><a href="#insights">Insights</a><a href="#tool">Smart tools</a><a href="#how">How it works</a></div>
+<a class="navbtn" href="#tool">Explore platform ↗</a>
+</nav>
+</header>
+<main>
+<section class="wrap hero">
+<div>
+<div class="eyebrow"><span class="dot"></span> Smarter food operations</div>
+<h1>Waste less.<br><span>Think smarter.</span><br>Feed more.</h1>
+<p>FoodWaste AI helps food businesses understand surplus, monitor expiry dates and make better inventory decisions — turning avoidable waste into measurable opportunity.</p>
+<div class="hero-actions"><a class="btn" href="#tool">Try the smart tools <span>→</span></a><a class="btn outline" href="#solution">Discover the approach</a></div>
+<div class="trust"><div class="avatars"><i>🥬</i><i>🍅</i><i>🥑</i></div><span>Built for restaurants, retailers & food teams</span></div>
+</div>
+<div class="hero-visual">
+<img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85" alt="Fresh vegetables arranged in a market">
+<div class="visual-overlay"></div>
+<div class="float-card top"><div class="fc-label">Food operations snapshot</div><div class="fc-big">Stay ahead</div><div class="fc-sub">Know what needs attention today.</div></div>
+<div class="float-card bottom"><div class="fc-label">Smart inventory</div><div class="fc-big">Less waste<span style="color:#6da65d">.</span></div><div class="fc-sub">Plan with data, not guesswork.</div><div class="bar"><span></span></div></div>
+</div>
+</section>
+<section class="section white" id="solution">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">The challenge</div><h2>Food waste is a business<br>problem — and a solvable one.</h2></div><p>When teams cannot see what is expiring, what is overstocked or what demand looks like, good food can become avoidable loss.</p></div>
+<div class="problem-grid">
+<article class="problem"><div class="icon">⏳</div><h3>Expiry goes unnoticed</h3><p>Products sit in storage without clear visibility into dates, leading to last-minute disposal and lost value.</p></article>
+<article class="problem"><div class="icon">📦</div><h3>Stock is hard to balance</h3><p>Over-ordering ties up money and creates surplus, while under-ordering can leave customers without products.</p></article>
+<article class="problem"><div class="icon">📉</div><h3>Decisions rely on guesses</h3><p>Without simple data insights, teams struggle to spot patterns and plan purchases around real demand.</p></article>
+</div>
+</div>
+</section>
+<section class="section" id="insights">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">Operations intelligence</div><h2>See the bigger picture.</h2></div><p>A sample dashboard concept showing the kinds of signals a food team can track. Figures below are illustrative demo data, not live business measurements.</p></div>
+<div class="dashboard">
+<div class="dash-top"><div><h3>Business overview</h3><p>Your food operations at a glance</p></div><span class="live">● DEMO DASHBOARD</span></div>
+<div class="stats">
+<div class="stat"><span>Items being tracked</span><strong id="trackedStat">24</strong><small>Inventory visibility</small></div>
+<div class="stat"><span>Near expiry</span><strong id="expiryStat">06</strong><small>Needs attention</small></div>
+<div class="stat"><span>Waste cost estimate</span><strong>Rs 8.4k</strong><small>Illustrative monthly figure</small></div>
+<div class="stat"><span>Potential savings</span><strong>18%</strong><small>Example opportunity</small></div>
+</div>
+<div class="dash-bottom">
+<div class="chartbox"><h4>Illustrative weekly waste trend</h4><div class="chart"><div class="col" data-day="Mon" style="height:70%"></div><div class="col" data-day="Tue" style="height:52%"></div><div class="col" data-day="Wed" style="height:62%"></div><div class="col" data-day="Thu" style="height:39%"></div><div class="col" data-day="Fri" style="height:46%"></div><div class="col" data-day="Sat" style="height:28%"></div><div class="col" data-day="Sun" style="height:20%"></div></div></div>
+<div class="insightbox"><h4>✦ Smart observation</h4><p><b>Start with perishables.</b> Review high-risk items daily, use older stock first and adjust future orders based on sales patterns. Small process changes can reduce avoidable waste.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section class="section white" id="tool">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">Try it yourself</div><h2>Make a smarter stock decision.</h2></div><p>Use the interactive demo to estimate food waste cost and check which inventory items need attention. Your entries stay in this browser session.</p></div>
+<div class="demo-grid">
+<div class="panel">
+<h3>Waste cost estimator</h3><p class="sub">Estimate the value of food discarded over a period.</p>
+<div class="field"><label>Food category</label><select id="category"><option>Fresh produce</option><option>Dairy</option><option>Bakery</option><option>Meat & seafood</option><option>Prepared food</option><option>Other</option></select></div>
+<div class="field"><label>Quantity wasted (kg)</label><input id="quantity" type="number" min="0" step="0.1" placeholder="e.g. 8"></div>
+<div class="field"><label>Average cost per kg (PKR)</label><input id="price" type="number" min="0" step="1" placeholder="e.g. 250"></div>
+<button class="btn full" id="calculate">Calculate estimated loss ↗</button>
+<div class="result" id="costResult" aria-live="polite"><strong id="lossValue">Rs 0</strong><p id="lossText"></p></div>
+</div>
+<div class="panel">
+<h3>Expiry watchlist</h3><p class="sub">Add stock and its remaining shelf life to create a simple priority list.</p>
+<div style="display:grid;grid-template-columns:1fr 110px;gap:10px">
+<div class="field" style="margin-top:0"><label>Food item</label><input id="foodName" placeholder="e.g. Tomatoes"></div>
+<div class="field" style="margin-top:0"><label>Days left</label><input id="daysLeft" type="number" min="0" max="365" placeholder="e.g. 2"></div>
+</div>
+<button class="btn full" id="addItem">+ Add to watchlist</button>
+<div style="display:flex;justify-content:space-between;align-items:center;margin:24px 0 12px"><strong style="font:700 13px Manrope">Inventory priorities</strong><span style="font-size:10px;color:#829087" id="itemCount">3 items</span></div>
+<div class="inventory-list" id="inventoryList">
+<div class="item"><div class="item-info"><strong>Spinach</strong><small>1 day remaining</small></div><span class="badge danger">Use today</span></div>
+<div class="item"><div class="item-info"><strong>Milk</strong><small>3 days remaining</small></div><span class="badge warn">Plan soon</span></div>
+<div class="item"><div class="item-info"><strong>Apples</strong><small>8 days remaining</small></div><span class="badge safe">On track</span></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="how">
+<div class="wrap">
+<div class="section-head"><div><div class="kicker">A practical workflow</div><h2>From daily data to better action.</h2></div><p>A simple process helps teams build consistent habits and make inventory decisions with greater confidence.</p></div>
+<div class="steps">
+<div class="step"><div class="step-no">01 / CAPTURE</div><h3>Record inventory</h3><p>Enter items, quantities, costs and expiry information in one place.</p></div>
+<div class="step"><div class="step-no">02 / MONITOR</div><h3>Spot risk early</h3><p>Identify items that need attention before they become waste.</p></div>
+<div class="step"><div class="step-no">03 / UNDERSTAND</div><h3>Review patterns</h3><p>Compare waste, stock movement and demand over time.</p></div>
+<div class="step"><div class="step-no">04 / IMPROVE</div><h3>Take action</h3><p>Adjust ordering, storage routines and menu or sales planning.</p></div>
+</div>
+</div>
+</section>
+<section class="wrap" style="padding-bottom:65px">
+<div class="cta"><div><div class="kicker" style="color:#4d7d43">A better food future</div><h2>Make every ingredient count.</h2><p>Start with visibility. Build smarter routines. Give good food a better chance of reaching the people who need it.</p></div><a class="btn" href="#tool">Explore the demo tools →</a></div>
+</section>
+</main>
+<footer><div class="wrap foot"><a class="brand" href="#" style="font-size:14px"><span class="brandmark" style="width:29px;height:29px;border-radius:10px;font-size:16px">♧</span> foodwaste.ai</a><span>Concept website · Interactive demo · Built to inspire smarter food operations</span><span>© 2026 FoodWaste AI</span></div></footer>
+<div class="toast" id="toast" role="status"></div>
+<script>
+const $=id=>document.getElementById(id);
+function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2300)}
+$('calculate').addEventListener('click',()=>{
+ const q=Number($('quantity').value),p=Number($('price').value);
+ if(!Number.isFinite(q)||!Number.isFinite(p)||q<=0||p<=0){toast('Please enter a quantity and cost greater than zero.');return}
+ const loss=q*p,fmt=new Intl.NumberFormat('en-PK',{maximumFractionDigits:2}).format(loss);
+ $('lossValue').textContent='Rs '+fmt;
+ $('lossText').textContent=`Your estimated ${$('category').value.toLowerCase()} loss is Rs ${fmt}. Review purchasing, storage and stock rotation to help prevent repeat waste. This is a simple estimate based on your inputs.`;
+ $('costResult').classList.add('show');
+});
+let items=[{name:'Spinach',days:1},{name:'Milk',days:3},{name:'Apples',days:8}];
+function renderItems(){
+ const list=$('inventoryList');list.innerHTML='';
+ items.sort((a,b)=>a.days-b.days);
+ items.forEach((item,i)=>{
+  const level=item.days<=1?'danger':item.days<=4?'warn':'safe';
+  const label=item.days<=1?'Use today':item.days<=4?'Plan soon':'On track';
+  const row=document.createElement('div');row.className='item';
+  const info=document.createElement('div');info.className='item-info';
+  const strong=document.createElement('strong');strong.textContent=item.name;
+  const small=document.createElement('small');small.textContent=item.days===0?'Expiry today':`${item.days} day${item.days===1?'':'s'} remaining`;
+  info.append(strong,small);
+  const actions=document.createElement('div');actions.className='item-actions';
+  const badge=document.createElement('span');badge.className='badge '+level;badge.textContent=label;
+  const del=document.createElement('button');del.className='remove';del.type='button';del.setAttribute('aria-label','Remove '+item.name);del.textContent='×';del.onclick=()=>{items.splice(i,1);renderItems()};
+  actions.append(badge,del);row.append(info,actions);list.append(row);
+ });
+ if(!items.length){const empty=document.createElement('div');empty.className='empty';empty.textContent='No items yet. Add your first food item above.';list.append(empty)}
+ $('itemCount').textContent=items.length+' item'+(items.length===1?'':'s');
+ $('trackedStat').textContent=String(24+items.length-3).padStart(2,'0');
+ $('expiryStat').textContent=String(items.filter(x=>x.days<=4).length).padStart(2,'0');
+}
+$('addItem').addEventListener('click',()=>{
+ const name=$('foodName').value.trim(),days=Number($('daysLeft').value);
+ if(!name||$('daysLeft').value===''||!Number.isInteger(days)||days<0||days>365){toast('Enter a food name and whole days from 0 to 365.');return}
+ if(items.some(x=>x.name.toLowerCase()===name.toLowerCase())){toast('That item is already on the watchlist.');return}
+ items.push({name,days});$('foodName').value='';$('daysLeft').value='';renderItems();toast('Added to your expiry watchlist.');
+});
+renderItems();
+</script>
+</body></html>
